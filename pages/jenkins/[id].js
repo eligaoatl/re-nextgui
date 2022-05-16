@@ -1,8 +1,14 @@
 import { useRouter } from "next/router"
 
 export default function JenkinsServerPage() {
-  console.log(useRouter)
+  const router = useRouter()
+
   return (
-    <div>Server ID: [id]</div>
+    <div>
+      <h1>Server ID: {router.query.id}</h1>
+      <p>Jenkins:</p>
+      <button onClick={() => router.push('/')}>Back to Home</button>
+    </div>
+
   )
 }
